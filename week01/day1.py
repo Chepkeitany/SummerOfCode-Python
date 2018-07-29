@@ -21,6 +21,17 @@ age = 48618000 / (365 * 24 * 60 * 60)
 print("Andreea's age is " + str(age) + " years\n")
 
 # How many days does it take for a 32-bit system to timeout, if it has a bug with integer overflow?
-# How about a 64-bit system?
+# Ref: https://en.wikipedia.org/wiki/Year_2038_problem
+days_to_32_bit_sys_timeout = (2 ** 31 - 1) / (60 * 60 * 24)
+print("It takes " + str(round(days_to_32_bit_sys_timeout)) + " days for a 32-bit system to timeout if it has a bug with integer overflow")
+# How many days does it take for a 64-bit system to timeout, if it has a bug with integer overflow?
+days_to_64_bit_sys_timeout = (2 ** 63 - 1) / (60 * 60 * 24)
+print("It takes " + str(round(days_to_64_bit_sys_timeout)) + " days for a 64-bit system to timeout if it has a bug with integer overflow")
 
 # Calculate your age accurately based on your birthday (maybe use time of day e.g. 8:23am if you know it, use 12:00 noon midday) - you will need Python modules.
+import datetime
+my_birthdate = datetime.datetime(1993, 5, 18, 12, 0, 0)
+date_today = datetime.datetime.now()
+dates_diff = date_today - my_birthdate
+
+print("My age today is " + str(dates_diff.days // 365))
