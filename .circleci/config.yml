@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7.0
     steps:
       - checkout
-      - run: pip install -r requirements/dev.txt
+      - run: python -m pip install --user -r requirements/dev.txt
 
 workflows:
   version: 2
