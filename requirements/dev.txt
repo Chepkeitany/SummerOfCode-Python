@@ -10,4 +10,3 @@ pycodestyle==2.4.0
 pylint==2.0.0
 six==1.11.0
 virtualenv==16.0.0
-wrapt==1.10.11
